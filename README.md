@@ -5,7 +5,7 @@ DAMA (Discord AI Messages Assistant) is an AI-powered Discord bot built with **P
 - 💬 **/ask** — Ask Gemini anything directly from Discord.
 - 📝 **/summary** — Summarize recent channel discussions with context awareness.
 - 🧠 Prompt-based architecture for easy customization.
-- ☁️ Deployed on Railway for 24/7 availability.
+- ☁️ Deployed on Railway/Render + Flask for 24/7 availability.
 
 ## Tech Stack
 - Python 3.11
