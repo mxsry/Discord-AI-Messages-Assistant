@@ -1,0 +1,11 @@
+I would like you to summarize a Discord conversation in Vietnamese.
+First, I will provide some previous messages as context so that you can better understand the discussion.
+------------------------------
+{context}
+------------------------------
+
+Now, summarize the following conversation.
+{messages}
+
+Requirements:
+- Keep the summary concise but complete.
