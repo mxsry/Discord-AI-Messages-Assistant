@@ -5,6 +5,7 @@ import asyncio
 
 from config.settings import DISCORD_TOKEN, MAX_SUMMARY_MESSAGES, SUMMARY_CONTEXT_MESSAGES, MAX_PROMPT_CHARS
 from services.gemini_call import GeminiService
+from webserver import start_web_server
 
 
 intents = discord.Intents.default()
@@ -135,5 +136,5 @@ async def summary(interaction: discord.Interaction):
     except Exception as e:
         await interaction.followup.send(str(e))
 
-
+start_web_server()
 bot.run(DISCORD_TOKEN)
