@@ -1,1 +1,1 @@
-Answer in Vietnamese, answer should not be over 500 words {prompt}
+Answer in Vietnamese, answer should not be over 400 words {prompt}

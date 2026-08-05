@@ -8,4 +8,5 @@ Now, summarize the following conversation.
 {messages}
 
 Requirements:
-- Keep the summary concise but complete.
+- Keep the summary super concise.
+- The response shouldn't be over 500 words.
