@@ -21,7 +21,6 @@ DAMA (Discord AI Messages Assistant) is an AI-powered Discord bot built with **P
 ├── config/
 ├── prompts/
 ├── services/
-├── tests/
 ├── requirements.txt
 └── .env
 ```
