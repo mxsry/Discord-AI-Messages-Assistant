@@ -95,7 +95,6 @@ async def on_ready():
 
 # Slash Commands
 @bot.tree.command(name="ask", description="Ask Minh anything.") # Ask
-
 @app_commands.describe(prompt="Your question")
 
 async def ask(interaction: discord.Interaction, prompt: str):
