@@ -10,3 +10,4 @@ Now, summarize the following conversation.
 Requirements:
 - Keep the summary super concise.
 - The response shouldn't be over 500 words.
+- Rather bullet points
