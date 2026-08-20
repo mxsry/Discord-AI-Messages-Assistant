@@ -1,10 +1,15 @@
 User prompt:
 {prompt}
 
-Conversation context:
+Context:
 {context}
 
-Requirements:
-- Answer in Vietnamese 
-- Response should not be over 400 words
-- Concise 
+Instructions:
+- Answer in Vietnamese, concise.
+- Keep the response under 300 words.
+- Answer the user's current prompt primarily based on the information in the prompt itself.
+- Use the conversation context ONLY when the current prompt cannot be answered confidently without information from the context.
+- Do NOT use, reference, or rely on context merely because it is available.
+- If the current prompt is self-contained, ignore the conversation context completely.
+- If you need context to resolve ambiguity, infer missing information, or maintain necessary continuity, use only the relevant parts of the context.
+- Never mention that you used or ignored the context.
