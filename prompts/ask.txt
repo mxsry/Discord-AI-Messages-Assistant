@@ -1,6 +1,9 @@
 User prompt:
 {prompt}
 
+Conversation context:
+{context}
+
 Requirements:
 - Answer in Vietnamese 
 - Response should not be over 400 words

@@ -3,7 +3,7 @@ from discord import app_commands
 from discord.ext import commands
 import asyncio
 
-from config.settings import DISCORD_TOKEN, MAX_SUMMARY_MESSAGES, SUMMARY_CONTEXT_MESSAGES, MAX_PROMPT_CHARS
+from config.settings import DISCORD_TOKEN, MAX_SUMMARY_MESSAGES, MAX_CONTEXT_MESSAGES, SUMMARY_CONTEXT_MESSAGES, MAX_PROMPT_CHARS
 from services.gemini_call import GeminiService
 from webserver import start_web_server
 
@@ -43,6 +43,7 @@ async def send_response(interaction: discord.Interaction, text: str):
         await interaction.followup.send(chunk)
 
 async def get_recent_messages(channel: discord.TextChannel) -> tuple[str, str]:
+    """ Get recent messages split into context and recent chat. """
     history = []
     current_size = 0
 
@@ -75,6 +76,18 @@ async def get_recent_messages(channel: discord.TextChannel) -> tuple[str, str]:
         "\n".join(recent),
     )
 
+async def get_recent_context(channel):
+    """ Get recent user messages for context. """
+    messages = []
+
+    async for message in channel.history(limit=MAX_CONTEXT_MESSAGES):
+        if message.author.bot:
+            continue
+
+        messages.append(f"{message.author.display_name}: {message.content}")
+    messages.reverse()
+    
+    return "\n".join(messages)
 
 @bot.event
 async def on_ready():
@@ -100,7 +113,8 @@ async def on_ready():
 async def ask(interaction: discord.Interaction, prompt: str):
     await interaction.response.defer(thinking=True)
     try:
-        response = await asyncio.to_thread(gemini.ask, prompt)
+        context = await get_recent_context(interaction.channel)
+        response = await asyncio.to_thread(gemini.ask, prompt, context)
         await send_response(
             interaction,
             response,
@@ -119,7 +133,7 @@ async def summary(interaction: discord.Interaction):
             interaction.channel
         )
         summary = await asyncio.to_thread(
-            gemini.sumarize,
+            gemini.summarize,
             context,
             messages,
         )

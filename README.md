@@ -44,6 +44,9 @@ DISCORD_TOKEN=your_discord_token
 GEMINI_API_KEY=your_gemini_api_key
 ```
 
+Create a Discord Bot:
+[Discord Developer Portal](https://discord.com/developers/applications)
+
 ## Commands
 
 | Command | Description |
@@ -57,6 +60,6 @@ GEMINI_API_KEY=your_gemini_api_key
 - [x] Conversation Summarization
 - [x] Prompt Template System
 - [x] Render + Flask Deployment
-- [ ] Context-aware AI
+- [x] Context-aware AI
 - [ ] Server Knowledge Base
 - [ ] Semantic Search (RAG)

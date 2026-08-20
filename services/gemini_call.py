@@ -7,11 +7,11 @@ class GeminiService:
         self.client = genai.Client(api_key=GEMINI_API_KEY)
         self.prompt_dir = Path("prompts")
 
-    def ask(self, prompt: str) -> str:
-        prt = self._load_prompt("ask.txt", prompt=prompt)
+    def ask(self, prompt: str, context: str) -> str:
+        prt = self._load_prompt("ask.txt", prompt=prompt, context=context)
         return self._generate(prt)
 
-    def sumarize(self, messages: str, context: str = "") -> str:
+    def summarize(self, messages: str, context: str = "") -> str:
         prt = self._load_prompt("summary.txt", context=context, messages=messages)
         return self._generate(prt)
 
