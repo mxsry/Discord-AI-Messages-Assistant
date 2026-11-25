@@ -40,8 +40,9 @@ python bot.py
 Create a `.env` file:
 
 ```env
-DISCORD_TOKEN=your_discord_token
-GEMINI_API_KEY=your_gemini_api_key
+DISCORD_TOKEN= discord_token
+GEMINI_API_KEY= gemini_api_key
+DATABASE_URL= database_connection_string
 ```
 
 Create a Discord Bot:
@@ -58,8 +59,6 @@ Create a Discord Bot:
 
 - [x] AI Chat
 - [x] Conversation Summarization
-- [x] Prompt Template System
 - [x] Render + Flask Deployment
-- [x] Context-aware AI
 - [ ] Server Knowledge Base
 - [ ] Semantic Search (RAG)

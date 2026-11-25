@@ -5,6 +5,7 @@ venv/
 
 # Environment variables
 .env
+discord.db
 
 # Python cache
 __pycache__/
